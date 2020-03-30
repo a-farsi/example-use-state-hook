@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [count2, setCount2] = useState(7);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <div>
-      <button
-        onClick={() => {
-          setCount(count + 1);
-          setCount2(c => c + 1);
+      <input
+        name="email"
+        value={email}
+        onChange={e => {
+          setEmail(e.target.value);
         }}
-      >
-        increment
-      </button>
-      <div>{count}</div>
-      <div>{count2}</div>
+      ></input>
+      <input
+        type="password"
+        name="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      ></input>
     </div>
   );
 }
